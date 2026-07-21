@@ -9,11 +9,13 @@ public class OrderService
 {
     private OrderRepository _repository;
     private NotificationService _notificationService;
+    private PaymentService _paymentService;
 
-    public OrderService(OrderRepository repository, NotificationService notificationService)
+    public OrderService(OrderRepository repository, NotificationService notificationService, PaymentService paymentService)
     {
         _repository = repository;
         _notificationService = notificationService;
+        _paymentService = paymentService;
     }
 
     public async Task CancelUnpaidOrders()
@@ -34,8 +36,30 @@ public class OrderService
         return result.Item1;
     }
 
+    public async Task<bool> MarkOrderAsPaidAsync(Guid orderId)
+    {
+        var order = await GetOrder(orderId);
+        if(order == null)
+        {
+            return false;    
+        }
+
+        var isPaymentValid = await _paymentService.ValidatePayment(order.PaymentId);
+        if (!isPaymentValid)
+        {
+           return false; 
+        }
+
+        return await _repository.MarkPaidAsync(orderId);
+    }
+
     public async Task<Order> GetOrder(Guid id)
     {
         return await _repository.GetOrder(id);
+    }
+
+    public async Task AddOrder(Order order)
+    {
+        await _repository.AddOrder(order);
     }
 }
