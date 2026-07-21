@@ -1,0 +1,36 @@
+<mxfile host="app.diagrams.net" modified="2024-01-10T17:07:23.133Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="QSTtwqTyZUcKSxAMlRVj" version="21.4.0" type="device">
+  <diagram name="Page-1" id="lW3TOWWNbQMwXgx1rjup">
+    <mxGraphModel dx="1434" dy="738" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8CC0QaaxpIeKdmha0VC7-11" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="25" width="250" height="415" as="geometry" />
+        </mxCell>
+        <mxCell id="8CC0QaaxpIeKdmha0VC7-9" value="Buyer successfully pays in FakePay system" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="8CC0QaaxpIeKdmha0VC7-1" target="8CC0QaaxpIeKdmha0VC7-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8CC0QaaxpIeKdmha0VC7-1" value="CREATED" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8CC0QaaxpIeKdmha0VC7-3" value="Buyer purchases item" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8CC0QaaxpIeKdmha0VC7-2" target="8CC0QaaxpIeKdmha0VC7-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8CC0QaaxpIeKdmha0VC7-2" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="215" y="40" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8CC0QaaxpIeKdmha0VC7-10" value="Seller delivers goods" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="8CC0QaaxpIeKdmha0VC7-4" target="8CC0QaaxpIeKdmha0VC7-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8CC0QaaxpIeKdmha0VC7-4" value="PAID" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8CC0QaaxpIeKdmha0VC7-6" value="DELIVERED" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
