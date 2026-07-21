@@ -10,6 +10,7 @@ namespace AtlantisMarketplace.Infrastructure.Repositories;
 
 public class OrderRepository
 {
+    private const string Paid = "PAID";
     private const int CancelUnpaidOrderChunkSize = 10;
 
     private AtlantisContext _context;
@@ -65,6 +66,20 @@ public class OrderRepository
         }
 
         return (marked, order);
+    }
+
+    public async Task<bool> MarkPaidAsync(Guid orderId)
+    {
+        var order = (await _context.Orders.FindAsync(orderId))!;
+        bool marked = false;
+        if (order != null && order.State != Paid)
+        {
+            order.State = Paid;
+            await _context.SaveChangesAsync();
+            marked = true;
+        }
+
+        return marked;
     }
 
     public async Task<Order> GetOrder(Guid id)

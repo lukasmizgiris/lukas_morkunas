@@ -57,6 +57,12 @@ public class AtlantisController : AtlantisControllerBase
         return Ok(newItem);
     }
 
+    [HttpPost("items/{itemId}/purchase")]
+    public ActionResult PurchaseItem([FromRoute] int itemId)
+    {
+        return NoContent();
+    }
+
     [HttpGet("items/delete/{itemId}")]
     public async Task<ActionResult<Item>> DeleteItem([FromRoute] int itemId)
     {
@@ -126,5 +132,16 @@ public class AtlantisController : AtlantisControllerBase
 
     }
 
+    [HttpPatch("orders/{orderId:Guid}/mark-as-paid")]
+    public async Task<ActionResult> MarkOrderAsPaid([FromRoute] Guid orderId)
+    {
+        var isSuccessful = await _orderService.MarkOrderAsPaidAsync(orderId);
+        if(!isSuccessful)
+        {
+            return BadRequest();
+        }
+
+        return NoContent();
+    }
     #endregion
 }
